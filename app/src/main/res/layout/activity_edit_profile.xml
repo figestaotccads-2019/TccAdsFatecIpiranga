@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="38.40dp"
+    android:orientation="vertical"
+    tools:context="com.figestaotcc.EditProfileActivity">
+
+    <EditText
+        android:id="@+id/profile_name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/prompt_name"
+        android:inputType="textPersonName"
+        android:maxLines="1"
+        android:padding="16.80dp"
+        android:textSize="16.80dp"
+        android:textColor="@color/colorBlack"
+        android:singleLine="true" />
+
+    <EditText
+        android:id="@+id/profile_password"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Password"
+        android:inputType="text"
+        android:maxLines="1"
+        android:padding="16.80dp"
+        android:textSize="16.80dp"
+        android:textColor="@color/colorBlack"
+        android:layout_marginTop="38.40dp"
+        android:singleLine="true" />
+
+    <EditText
+        android:id="@+id/profile_confirm_password"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Confirm Password"
+        android:inputType="phone"
+        android:maxLines="1"
+        android:padding="16.80dp"
+        android:textSize="16.80dp"
+        android:textColor="@color/colorBlack"
+        android:layout_marginTop="19.20dp"
+        android:singleLine="true" />
+
+   <Button
+        android:id="@+id/save_edit_button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="19.20dp"
+        android:textColor="@color/colorWhite"
+        android:text="SALVAR"
+        android:background="@color/colorPrimaryDark"
+        android:padding="16.80dp"/>
+
+
+</LinearLayout>
