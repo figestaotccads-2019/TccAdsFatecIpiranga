@@ -33,7 +33,7 @@ public class MainActivity extends AppCompatActivity {
         bpaction_sign_in_button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent ac = new Intent(getApplicationContext(),LoginActivity.class);
+                Intent ac = new Intent(getApplicationContext(),EmailPasswordActivity.class);
                 startActivity(ac);
                             }
         });

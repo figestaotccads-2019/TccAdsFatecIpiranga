@@ -59,14 +59,15 @@ public class CadastroUsuarioActivity extends AppCompatActivity {
     }
 
     private void inicializaComponentes(){
+        mAuth = ((FirebaseApplication)getApplication()).getFirebaseAuth();
+        ((FirebaseApplication)getApplication()).checkUserLogin(CadastroUsuarioActivity.this);
 
         loginError = (TextView)findViewById(R.id.login_error);
-        //nameEditText = (EditText) findViewById(R.id.nameEditText);
-        //confirmpasswordEditText = (EditText) findViewById(R.id.confirmpasswordEditText);
-    emailEditText = (EditText) findViewById(R.id.emailEditText);
-    passwordEditText = (EditText) findViewById(R.id.passwordEditText);
-    registrar_button = (Button) findViewById(R.id.registrar_button);
+        emailEditText = (EditText) findViewById(R.id.emailEditText);
+        passwordEditText = (EditText) findViewById(R.id.passwordEditText);
+        registrar_button = (Button) findViewById(R.id.registrar_button);
     }
+
 
     public static boolean isValidEmail(String email){
         if(email.contains("@")){
@@ -82,42 +83,31 @@ public class CadastroUsuarioActivity extends AppCompatActivity {
 
     private void eventoClicks(){
 
+
+        registrar_button = (Button) findViewById(R.id.registrar_button);
         registrar_button.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View v) {
-                String name = nameEditText.getEditableText().toString();
-                String email = emailEditText.getEditableText().toString();
-                String password = passwordEditText.getEditableText().toString();
-                String confirmpassword = confirmpasswordEditText.getEditableText().toString();
-                String chave = usuariosReference.push().getKey();
+            public void onClick(View view) {
+                String enteredEmail = emailEditText.getText().toString();
+                String enteredPassword = passwordEditText.getText().toString();
 
-                if(TextUtils.isEmpty(email) || TextUtils.isEmpty(password)){
+                if(TextUtils.isEmpty(enteredEmail) || TextUtils.isEmpty(enteredPassword)){
                     displayMessageToast(CadastroUsuarioActivity.this, "Login fields must be filled");
                     return;
                 }
-                if(!isValidEmail(email)){
+                if(!isValidEmail(enteredEmail)){
                     displayMessageToast(CadastroUsuarioActivity.this, "Invalidate email entered");
                     return;
                 }
 
-                Usuario usuario = new Usuario (name, email, password,confirmpassword);
-                usuariosReference.child(chave).setValue(usuario);
-
-                Toast.makeText(CadastroUsuarioActivity.this,
-                        getString(R.string.usuario_cadastrado),
-                        Toast.LENGTH_SHORT).show();
-
-                Intent i = new Intent(CadastroUsuarioActivity.this,
-                        LoginActivity.class);
-                startActivity(i);
-                finish();
-
+                ((FirebaseApplication)getApplication()).createNewUser(CadastroUsuarioActivity.this, enteredEmail, enteredPassword, loginError);
             }
-
         });
     }
 
-    }
+
+
+}
 
 
 

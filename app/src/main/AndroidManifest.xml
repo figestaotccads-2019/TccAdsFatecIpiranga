@@ -35,21 +35,20 @@
         </intent-filter>
     </activity>
 
-        <activity android:name="com.figestaotcc.LoginActivity"
+        <activity android:name="com.figestaotcc.EmailPasswordActivity"
             android:theme="@style/AppTheme"
             android:parentActivityName=".MainActivity">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".MainActivity"/>
         </activity>
-
-        <activity android:name="com.figestaotcc.CadastroUsuarioActivity"
+        <activity android:name="com.figestaotcc.ProfileActivity"
             android:theme="@style/AppTheme"
             android:parentActivityName=".MainActivity">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".MainActivity"/>
-        </activity>
+    </activity>
 
         <activity android:name="com.figestaotcc.MenuActivity"
             android:theme="@style/AppTheme"
@@ -59,12 +58,12 @@
                 android:value=".MainActivity"/>
         </activity>
 
-        <activity android:name="com.figestaotcc.RecuperarActivity"
+       <activity android:name="com.figestaotcc.RecuperarActivity"
             android:theme="@style/AppTheme"
-            android:parentActivityName=".LoginActivity">
+            android:parentActivityName=".EmailPasswordActivity">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value=".LoginActivity"/>
+                android:value=".EmailPasswordActivity"/>
         </activity>
 
 

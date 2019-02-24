@@ -69,7 +69,7 @@ public class EditProfileActivity extends AppCompatActivity {
                     String chave = user.getUid();
                     String profileEmail = user.getEmail();
 
-                    Usuario usuario = new Usuario (chave, profileName, profileEmail, profilePassword, profileConfirmPassword);
+                    Usuario usuario = new Usuario (chave, profileName, profileEmail, profilePassword);
                     FirebaseDatabase firebaseDatabase = new FirebaseDatabase();
                     firebaseDatabase.createUserInFirebaseDatabase(chave, usuario);
 

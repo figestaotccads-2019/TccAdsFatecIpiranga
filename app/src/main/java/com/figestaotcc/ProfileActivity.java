@@ -8,25 +8,38 @@ import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
-import android.support.v4.widget.DrawerLayout.DrawerListener;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
+import com.google.firebase.auth.AuthResult;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 
 import com.figestaotcc.R;
 
-public class MenuActivity extends AppCompatActivity{
+public class ProfileActivity extends BaseActivity implements
+        View.OnClickListener {
 
     private FragmentManager fragmentManager;
 
     private Fragment fragment = null;
+    private FirebaseAuth mAuth;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_menu);
+        setContentView(R.layout.activity_profile);
+
+        // [START initialize_auth]
+        // Initialize Firebase Auth
+        mAuth = FirebaseAuth.getInstance();
+        // [END initialize_auth]
 
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
@@ -76,6 +89,13 @@ public class MenuActivity extends AppCompatActivity{
     }
 
     @Override
+    public void onStart() {
+        super.onStart();
+        // Check if user is signed in (non-null) and update UI accordingly.
+        FirebaseUser currentUser = mAuth.getCurrentUser();
+        updateUI(currentUser);
+    }
+    @Override
     public void onBackPressed() {
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         if (drawer.isDrawerOpen(GravityCompat.START)) {
@@ -107,6 +127,20 @@ public class MenuActivity extends AppCompatActivity{
         return super.onOptionsItemSelected(item);
     }
 
+
+    @Override
+    public void onClick(View v) {
+        int i = v.getId();
+        if (i == R.id.nav_logout) {
+            signOut();
+        } /*else if (i == R.id.emailSignInButton) {
+            signIn(mEmailField.getText().toString(), mPasswordField.getText().toString());
+        } *//*else if (i == R.id.signOutButton) {
+            signOut();
+        } else if (i == R.id.verifyEmailButton) {
+            sendEmailVerification();
+        }*/
+    }
     private void disableNavigationViewScrollbars(NavigationView navigationView) {
         if (navigationView != null) {
             NavigationMenuView navigationMenuView = (NavigationMenuView) navigationView.getChildAt(0);
@@ -115,4 +149,12 @@ public class MenuActivity extends AppCompatActivity{
             }
         }
     }
+
+    private void updateUI(FirebaseUser user) {
+        hideProgressDialog();}
+
+    private void signOut() {
+        mAuth.signOut();
+        updateUI(null);}
 }
+

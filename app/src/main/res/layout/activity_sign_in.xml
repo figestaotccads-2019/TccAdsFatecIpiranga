@@ -50,7 +50,7 @@
                 android:textColor="@color/colorAccent" />
 
                 <EditText
-                    android:id="@+id/email"
+                    android:id="@+id/fieldEmail"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:hint="@string/prompt_email"
@@ -60,7 +60,7 @@
 
 
                 <EditText
-                    android:id="@+id/password"
+                    android:id="@+id/fieldPassword"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:hint="@string/prompt_password"
@@ -81,7 +81,7 @@
             android:orientation="vertical">
 
             <Button
-                android:id="@+id/email_sign_in_button"
+                android:id="@+id/emailSignInButton"
                 style="?android:textAppearanceSmall"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -103,7 +103,7 @@
                 android:textStyle="bold" />
 
             <Button
-                android:id="@+id/cadastrar_button"
+                android:id="@+id/emailCreateAccountButton"
                 style="?android:textAppearanceSmall"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"

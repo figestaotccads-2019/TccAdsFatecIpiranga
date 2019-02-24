@@ -20,7 +20,7 @@ import com.google.firebase.database.FirebaseDatabase;
 
 
 public class LoginActivity extends AppCompatActivity  {
-
+/*
     private FirebaseDatabase firebaseDatabase;
     private DatabaseReference usuariosReference;
     private EditText password;
@@ -112,7 +112,7 @@ public class LoginActivity extends AppCompatActivity  {
         firebaseDatabase = FirebaseDatabase.getInstance();
         usuariosReference = firebaseDatabase.getReference("users");
     }
-
+*/
     }
 
 
