@@ -19,7 +19,7 @@
     <string name="text_recuperar_senha_button">ESQUECI MINHA SENHA</string>
     <string name="text_cadastrar_button">CADASTRAR</string>
 
-    <!-- activity_recuperar. -->
+    <!-- activity_menu. -->
     <string name="signed_out">Signed Out</string>
     <string name="text_logOut_button">SAIR</string>
     <string name="emailpassword_status_fmt">Email User: %1$s (verified: %2$b)</string>

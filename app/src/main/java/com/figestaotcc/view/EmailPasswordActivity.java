@@ -116,7 +116,7 @@ public class EmailPasswordActivity extends BaseActivity implements
                             Log.d(TAG, "signInWithEmail:success");
                             FirebaseUser user = mAuth.getCurrentUser();
                             updateUI(user);
-                            mostrarProfile();
+                            mostrarMenu();
 
                         } else {
                             // If sign in fails, display a message to the user.
@@ -200,7 +200,7 @@ public class EmailPasswordActivity extends BaseActivity implements
         }
     }
 
-    private void mostrarProfile() {
+    private void mostrarMenu() {
         Intent intent = new Intent(EmailPasswordActivity.this, MenuActivity.class);
         startActivity(intent);
         }
