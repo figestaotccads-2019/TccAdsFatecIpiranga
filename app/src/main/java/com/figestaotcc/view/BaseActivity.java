@@ -1,4 +1,4 @@
-package com.figestaotcc;
+package com.figestaotcc.view;
 
 import android.app.ProgressDialog;
 import android.content.Context;
@@ -6,7 +6,7 @@ import android.support.annotation.VisibleForTesting;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.view.inputmethod.InputMethodManager;
-import com.figestaotcc.R;
+import com.figestaotcc.view.R;
 
 public class BaseActivity extends AppCompatActivity {
 

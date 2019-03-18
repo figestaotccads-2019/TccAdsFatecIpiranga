@@ -1,11 +1,11 @@
-package com.figestaotcc;
+package com.figestaotcc.view;
 
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
 
-import com.figestaotcc.R;
+import com.figestaotcc.view.R;
 
 public class SplashScreenActivity extends AppCompatActivity {
     @Override

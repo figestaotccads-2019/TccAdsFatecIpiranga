@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#f5f5f5"
+    android:background="@color/colorBackground"
     android:gravity="center_horizontal"
     android:orientation="vertical"
     android:paddingLeft="@dimen/activity_horizontal_margin"
@@ -34,17 +34,17 @@
         android:src="@drawable/logo"
         android:contentDescription="@string/TODO"/>
 
-    <Button
-        android:id="@+id/action_sign_in_button"
-        style="?android:textAppearanceSmall"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="60dp"
-        android:background="#0e3040"
-        android:text="@string/action_sign_in"
-        android:textAllCaps="true"
-        android:textColor="#ffffff"
-        android:textStyle="bold" />
+            <Button
+                android:id="@+id/action_sign_in_button"
+                style="@style/Widget.AppCompat.Button"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="60dp"
+                android:background="@color/secondaryDarkColor"
+                android:text="@string/action_sign_in"
+                android:textAllCaps="true"
+                android:textColor="@color/secondaryTextColor"
+                android:textStyle="normal|bold" />
 
     <Button
         android:id="@+id/action_google_button"
@@ -54,7 +54,7 @@
         android:layout_marginTop="8dp"
         android:background="#d32f2f"
         android:text="@string/action_google"
-        android:textColor="#ffffff"
+        android:textColor="@color/secondaryTextColor"
         android:textStyle="bold" />
 
     <Button
@@ -65,7 +65,7 @@
         android:layout_marginTop="8dp"
         android:background="#0d47a1"
         android:text="@string/action_facebook"
-        android:textColor="#ffffff"
+        android:textColor="@color/secondaryTextColor"
         android:textStyle="bold" />
 
         </LinearLayout>

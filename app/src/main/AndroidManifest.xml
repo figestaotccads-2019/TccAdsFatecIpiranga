@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.figestaotcc">
+    package="com.figestaotcc.view">
 
     <uses-permission android:name="android.permission.INTERNET" />
 
@@ -19,7 +19,8 @@
         android:theme="@style/AppTheme">
 
         <activity
-            android:name="com.figestaotcc.SplashScreenActivity"
+            android:screenOrientation="portrait"
+            android:name="com.figestaotcc.view.SplashScreenActivity"
             android:theme="@style/AppCompat.TelaCheia">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -27,7 +28,7 @@
             </intent-filter>
         </activity>
 
-        <activity android:name="com.figestaotcc.MainActivity"
+        <activity android:name="com.figestaotcc.view.MainActivity"
             android:theme="@style/AppCompat.TelaCheia">
         <intent-filter>
             <action android:name="android.intent.action.MAIN" />
@@ -35,22 +36,7 @@
         </intent-filter>
     </activity>
 
-        <activity android:name="com.figestaotcc.EmailPasswordActivity"
-            android:theme="@style/AppTheme"
-            android:parentActivityName=".MainActivity">
-            <meta-data
-                android:name="android.support.PARENT_ACTIVITY"
-                android:value=".MainActivity"/>
-        </activity>
-        <activity android:name="com.figestaotcc.ProfileActivity"
-            android:theme="@style/AppTheme"
-            android:parentActivityName=".MainActivity">
-            <meta-data
-                android:name="android.support.PARENT_ACTIVITY"
-                android:value=".MainActivity"/>
-    </activity>
-
-        <activity android:name="com.figestaotcc.MenuActivity"
+        <activity android:name="com.figestaotcc.view.EmailPasswordActivity"
             android:theme="@style/AppTheme"
             android:parentActivityName=".MainActivity">
             <meta-data
@@ -58,12 +44,12 @@
                 android:value=".MainActivity"/>
         </activity>
 
-       <activity android:name="com.figestaotcc.RecuperarActivity"
+        <activity android:name="com.figestaotcc.view.MenuActivity"
             android:theme="@style/AppTheme"
-            android:parentActivityName=".EmailPasswordActivity">
+            android:parentActivityName=".MainActivity">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value=".EmailPasswordActivity"/>
+                android:value=".MainActivity"/>
         </activity>
 
 

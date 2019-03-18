@@ -1,10 +1,12 @@
-package com.figestaotcc;
+package com.figestaotcc.view;
 
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+
+import com.figestaotcc.view.R;
 
 
 public class MainActivity extends AppCompatActivity {
@@ -33,7 +35,7 @@ public class MainActivity extends AppCompatActivity {
         bpaction_sign_in_button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent ac = new Intent(getApplicationContext(),EmailPasswordActivity.class);
+                Intent ac = new Intent(getApplicationContext(), EmailPasswordActivity.class);
                 startActivity(ac);
                             }
         });
